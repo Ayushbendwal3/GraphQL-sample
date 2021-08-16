@@ -1,0 +1,26 @@
+type Query {
+    firstQuery : String
+    secondQuery: String
+    student : [Student]
+}
+
+type Student {
+    id : Long
+    firstname : String
+    lastname : String
+    email : String
+    address : String
+
+}
+
+input StudentRequest {
+    firstname : String
+    lastname : String
+    email : String
+    address : String
+}
+
+type Mutation {
+    addStudent(student : StudentRequest) : Student
+    updateStudent(id : Long, studentRequest : StudentRequest) : Student
+}
